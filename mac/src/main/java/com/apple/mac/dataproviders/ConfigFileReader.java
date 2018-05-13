@@ -14,6 +14,7 @@ public class ConfigFileReader {
 	
 	private Properties properties;
 	private final String propertyFilePath= "configs//Configuration.properties";
+	public String strFolderName;
 
 	
 	public ConfigFileReader(){
@@ -73,5 +74,13 @@ public class ConfigFileReader {
 		String reportConfigPath = System.getProperty("user.dir")+"\\"+properties.getProperty("reportConfigPath");
 		if(reportConfigPath!= null) return reportConfigPath;
 		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
+	}
+	public void setReportFolderName(String strFolderName){
+		this.strFolderName = strFolderName;
+			
+	}
+	public String getReportFolderName(){
+		return strFolderName ;
+			
 	}
 }

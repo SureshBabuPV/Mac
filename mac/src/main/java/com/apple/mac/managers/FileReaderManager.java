@@ -17,6 +17,10 @@ public class FileReaderManager {
 	 }
 
 	 public ConfigFileReader getConfigReader() {
-		 return (configFileReader == null) ? new ConfigFileReader() : configFileReader;
+		// return (configFileReader == null) ? new ConfigFileReader() : configFileReader;
+		 if (configFileReader == null)
+			 return new ConfigFileReader();
+		 else
+			 return configFileReader;
 	 }
 }
